@@ -24,7 +24,14 @@ namespace Inloggen
 
         string connectionString = "server=localhost;database=InlogProject_Giel;uid=InlogProject;pwd=Gilde123!;port=3306;SslMode=None;";
 
-
+        public class Gebruikers_data
+        {
+            public string email { get; set; } = "";
+            public string voornaam { get; set; } = "";
+            public string achternaam { get; set; } = "";
+            public string klas { get; set; } = "";
+            public string rolNaam { get; set; } = "";
+        }
         private void dataBase_Connection()
         {
 
@@ -87,6 +94,54 @@ namespace Inloggen
                 return false;
             }
         }
+
+        private void get_gebruikers()
+        {
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string selectQuery = "SELECT Gebruiker.email, Gebruiker.voornaam, Gebruiker.achternaam, Gebruiker.klas, Gebruiker.rolld, Rol.ID, Rol.naam FROM Gebruiker JOIN Rol on Gebruiker.rolld = Rol.ID;";
+                using (MySqlCommand command = new MySqlCommand(selectQuery, connection))
+                {
+                    
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            bool is_Klas_Null = reader.IsDBNull(reader.GetOrdinal("klas"));
+
+                            bool is_Email_Null = reader.IsDBNull(reader.GetOrdinal("email"));
+
+
+                            string email;
+                            if (is_Klas_Null == false)
+                            {
+                                email = reader.GetString("email");
+                            }
+                            else
+                            {
+                                email = "NULL";
+                            }
+
+                            string voornaam = reader.GetString("voornaam");
+                            string achternaam = reader.GetString("achternaam");
+                            string klas;
+                            if (is_Klas_Null == false)
+                            {
+                                klas = reader.GetString("klas");
+                            }
+                            else
+                            {
+                                klas = "NULL";
+                            }
+                            string rolNaam = reader.GetString("naam");
+
+                            rTBGebruikers.Text += $"Email: {email}, Voornaam: {voornaam}, Achternaam: {achternaam} Klas: {klas}, Rol: {rolNaam}";
+                        }
+                    }
+                }
+            }
+        }
         private async void btnInloggen_Click(object sender, EventArgs e)
         {
             bool verificatie = await checkLogin(txtEmailInvoer.Text, txtWachtwoordInvoer.Text);
@@ -94,6 +149,7 @@ namespace Inloggen
             if (verificatie == true)
             {
                 MessageBox.Show("ingelogd");
+                get_gebruikers();
             } else if (verificatie == false)
             {
                 errorProviderDataBase.SetError(btnInloggen, "foute Inloggegevens");
