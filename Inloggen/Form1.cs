@@ -1,15 +1,16 @@
-﻿using MySqlConnector;
+﻿using BCrypt.Net;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BCrypt.Net;
-using System.Runtime.Remoting.Messaging;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Inloggen
 {
@@ -24,14 +25,6 @@ namespace Inloggen
 
         string connectionString = "server=localhost;database=InlogProject_Giel;uid=InlogProject;pwd=Gilde123!;port=3306;SslMode=None;";
 
-        public class Gebruikers_data
-        {
-            public string email { get; set; } = "";
-            public string voornaam { get; set; } = "";
-            public string achternaam { get; set; } = "";
-            public string klas { get; set; } = "";
-            public string rolNaam { get; set; } = "";
-        }
         private void dataBase_Connection()
         {
 
@@ -94,8 +87,36 @@ namespace Inloggen
                 return false;
             }
         }
+        public string Get_Gebruiker_Rol(string email, string wachtwoord)
+        {
+            string query_get_gebruiker_rol = "SELECT Gebruiker.email, Gebruiker.voornaam, Gebruiker.achternaam, Gebruiker.klas, Gebruiker.rolld, Rol.ID, Rol.naam FROM Gebruiker JOIN Rol on Gebruiker.rolld = Rol.ID AND Gebruiker.email = @email";
 
-        private void get_gebruikers()
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (var cmd = new MySqlCommand(query_get_gebruiker_rol, connection))
+                {
+                    cmd.Parameters.AddWithValue("@email", email);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string rol = reader.GetString("naam");
+                            return rol;
+                        }
+                        else
+                        {
+                            errorProviderGetGebruikerRol.SetError(lbShowRolGebruiker, "Gebruiker rol ophalen niet mogelijk");
+                            return "";
+                        }
+                    }
+                }
+            }
+        }
+
+        private void show_gebruikers()
         {
             using (var connection = new MySqlConnection(connectionString))
             {
@@ -114,7 +135,7 @@ namespace Inloggen
 
 
                             string email;
-                            if (is_Klas_Null == false)
+                            if (is_Email_Null == false)
                             {
                                 email = reader.GetString("email");
                             }
@@ -136,7 +157,7 @@ namespace Inloggen
                             }
                             string rolNaam = reader.GetString("naam");
 
-                            rTBGebruikers.Text += $"Email: {email}, Voornaam: {voornaam}, Achternaam: {achternaam} Klas: {klas}, Rol: {rolNaam}";
+                            rTBGebruikers.Text += $"Email: {email}, Voornaam: {voornaam}, Achternaam: {achternaam} Klas: {klas}, Rol: {rolNaam} ";
                         }
                     }
                 }
@@ -145,11 +166,17 @@ namespace Inloggen
         private async void btnInloggen_Click(object sender, EventArgs e)
         {
             bool verificatie = await checkLogin(txtEmailInvoer.Text, txtWachtwoordInvoer.Text);
+            string gebruiker_RoL = Get_Gebruiker_Rol(txtEmailInvoer.Text, txtWachtwoordInvoer.Text);
 
-            if (verificatie == true)
+            if (verificatie == true && gebruiker_RoL != "")
             {
                 MessageBox.Show("ingelogd");
-                get_gebruikers();
+                show_gebruikers();
+
+                lbShowRolGebruiker.Text = gebruiker_RoL;
+
+                txtEmailInvoer.Text = "";
+                txtWachtwoordInvoer.Text= "";
             } else if (verificatie == false)
             {
                 errorProviderDataBase.SetError(btnInloggen, "foute Inloggegevens");

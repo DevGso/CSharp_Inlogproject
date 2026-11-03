@@ -39,7 +39,10 @@
             this.txtEmailInvoer = new System.Windows.Forms.TextBox();
             this.errorProviderDataBase = new System.Windows.Forms.ErrorProvider(this.components);
             this.rTBGebruikers = new System.Windows.Forms.RichTextBox();
+            this.lbShowRolGebruiker = new System.Windows.Forms.Label();
+            this.errorProviderGetGebruikerRol = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDataBase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderGetGebruikerRol)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInloggen
@@ -102,6 +105,7 @@
             // 
             // txtWachtwoordInvoer
             // 
+            this.txtWachtwoordInvoer.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtWachtwoordInvoer.Location = new System.Drawing.Point(286, 217);
             this.txtWachtwoordInvoer.Name = "txtWachtwoordInvoer";
             this.txtWachtwoordInvoer.Size = new System.Drawing.Size(233, 29);
@@ -127,11 +131,24 @@
             this.rTBGebruikers.TabIndex = 10;
             this.rTBGebruikers.Text = "";
             // 
+            // lbShowRolGebruiker
+            // 
+            this.lbShowRolGebruiker.AutoSize = true;
+            this.lbShowRolGebruiker.Location = new System.Drawing.Point(384, 425);
+            this.lbShowRolGebruiker.Name = "lbShowRolGebruiker";
+            this.lbShowRolGebruiker.Size = new System.Drawing.Size(0, 44);
+            this.lbShowRolGebruiker.TabIndex = 11;
+            // 
+            // errorProviderGetGebruikerRol
+            // 
+            this.errorProviderGetGebruikerRol.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 472);
+            this.Controls.Add(this.lbShowRolGebruiker);
             this.Controls.Add(this.rTBGebruikers);
             this.Controls.Add(this.txtEmailInvoer);
             this.Controls.Add(this.txtWachtwoordInvoer);
@@ -144,6 +161,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDataBase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderGetGebruikerRol)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,6 +179,8 @@
         private System.Windows.Forms.TextBox txtEmailInvoer;
         private System.Windows.Forms.ErrorProvider errorProviderDataBase;
         private System.Windows.Forms.RichTextBox rTBGebruikers;
+        private System.Windows.Forms.Label lbShowRolGebruiker;
+        private System.Windows.Forms.ErrorProvider errorProviderGetGebruikerRol;
     }
 }
 
