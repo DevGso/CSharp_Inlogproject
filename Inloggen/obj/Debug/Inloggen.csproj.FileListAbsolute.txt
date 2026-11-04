@@ -30,3 +30,4 @@ C:\Users\GielF\OneDrive - ROC Gilde Opleidingen\Software_bestanden\Visual_studio
 C:\Users\GielF\OneDrive - ROC Gilde Opleidingen\Software_bestanden\Visual_studio\Inloggen\Inloggen\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\GielF\OneDrive - ROC Gilde Opleidingen\Software_bestanden\Visual_studio\Inloggen\Inloggen\obj\Debug\Inloggen.csproj.Up2Date
 C:\Users\GielF\OneDrive - ROC Gilde Opleidingen\Software_bestanden\Visual_studio\Inloggen\Inloggen\bin\Debug\BCrypt-Net-Next.dll
+C:\Users\GielF\OneDrive - ROC Gilde Opleidingen\Software_bestanden\Visual_studio\Inloggen\Inloggen\obj\Debug\Inloggen.FormRegistreren.resources

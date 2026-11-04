@@ -77,11 +77,11 @@
             // 
             this.lblInfoGeenAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblInfoGeenAccount.AutoSize = true;
-            this.lblInfoGeenAccount.Location = new System.Drawing.Point(12, 426);
+            this.lblInfoGeenAccount.Location = new System.Drawing.Point(24, 420);
             this.lblInfoGeenAccount.Name = "lblInfoGeenAccount";
-            this.lblInfoGeenAccount.Size = new System.Drawing.Size(209, 25);
+            this.lblInfoGeenAccount.Size = new System.Drawing.Size(223, 25);
             this.lblInfoGeenAccount.TabIndex = 3;
-            this.lblInfoGeenAccount.Text = "Nog geen accout? dan";
+            this.lblInfoGeenAccount.Text = "Nog geen accout? Dan: ";
             // 
             // btnInloggen
             // 
@@ -96,12 +96,13 @@
             // btnRegistreren
             // 
             this.btnRegistreren.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnRegistreren.Location = new System.Drawing.Point(221, 423);
+            this.btnRegistreren.Location = new System.Drawing.Point(240, 412);
             this.btnRegistreren.Name = "btnRegistreren";
-            this.btnRegistreren.Size = new System.Drawing.Size(132, 34);
+            this.btnRegistreren.Size = new System.Drawing.Size(132, 43);
             this.btnRegistreren.TabIndex = 5;
             this.btnRegistreren.Text = "Registreren";
             this.btnRegistreren.UseVisualStyleBackColor = true;
+            this.btnRegistreren.Click += new System.EventHandler(this.btnRegistreren_Click);
             // 
             // txtWachtwoordInvoer
             // 
@@ -136,7 +137,7 @@
             this.lbShowRolGebruiker.AutoSize = true;
             this.lbShowRolGebruiker.Location = new System.Drawing.Point(384, 425);
             this.lbShowRolGebruiker.Name = "lbShowRolGebruiker";
-            this.lbShowRolGebruiker.Size = new System.Drawing.Size(0, 44);
+            this.lbShowRolGebruiker.Size = new System.Drawing.Size(0, 25);
             this.lbShowRolGebruiker.TabIndex = 11;
             // 
             // errorProviderGetGebruikerRol

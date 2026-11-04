@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\GielF\\OneDrive - ROC Gilde Opleidingen\\Software_bestanden\\Visual_studio\\Inloggen\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EE5D2FDA-69B6-46EA-ABEF-130FA85DB32E}|Inloggen\\Inloggen.csproj|c:\\users\\gielf\\onedrive - roc gilde opleidingen\\software_bestanden\\visual_studio\\inloggen\\inloggen\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE5D2FDA-69B6-46EA-ABEF-130FA85DB32E}|Inloggen\\Inloggen.csproj|solutionrelative:inloggen\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EE5D2FDA-69B6-46EA-ABEF-130FA85DB32E}|Inloggen\\Inloggen.csproj|c:\\users\\gielf\\onedrive - roc gilde opleidingen\\software_bestanden\\visual_studio\\inloggen\\inloggen\\formregistreren.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE5D2FDA-69B6-46EA-ABEF-130FA85DB32E}|Inloggen\\Inloggen.csproj|solutionrelative:inloggen\\formregistreren.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE5D2FDA-69B6-46EA-ABEF-130FA85DB32E}|Inloggen\\Inloggen.csproj|C:\\Users\\GielF\\OneDrive - ROC Gilde Opleidingen\\Software_bestanden\\Visual_studio\\Inloggen\\inloggen\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{EE5D2FDA-69B6-46EA-ABEF-130FA85DB32E}|Inloggen\\Inloggen.csproj|solutionrelative:inloggen\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE5D2FDA-69B6-46EA-ABEF-130FA85DB32E}|Inloggen\\Inloggen.csproj|C:\\Users\\GielF\\OneDrive - ROC Gilde Opleidingen\\Software_bestanden\\Visual_studio\\Inloggen\\inloggen\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE5D2FDA-69B6-46EA-ABEF-130FA85DB32E}|Inloggen\\Inloggen.csproj|solutionrelative:inloggen\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE5D2FDA-69B6-46EA-ABEF-130FA85DB32E}|Inloggen\\Inloggen.csproj|C:\\Users\\GielF\\OneDrive - ROC Gilde Opleidingen\\Software_bestanden\\Visual_studio\\Inloggen\\inloggen\\formregistreren.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE5D2FDA-69B6-46EA-ABEF-130FA85DB32E}|Inloggen\\Inloggen.csproj|solutionrelative:inloggen\\formregistreren.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,21 +26,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "FormRegistreren.cs",
+              "DocumentMoniker": "C:\\Users\\GielF\\OneDrive - ROC Gilde Opleidingen\\Software_bestanden\\Visual_studio\\Inloggen\\Inloggen\\FormRegistreren.cs",
+              "RelativeDocumentMoniker": "Inloggen\\FormRegistreren.cs",
+              "ToolTip": "C:\\Users\\GielF\\OneDrive - ROC Gilde Opleidingen\\Software_bestanden\\Visual_studio\\Inloggen\\Inloggen\\FormRegistreren.cs",
+              "RelativeToolTip": "Inloggen\\FormRegistreren.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAmwHwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-03T20:51:23.108Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\GielF\\OneDrive - ROC Gilde Opleidingen\\Software_bestanden\\Visual_studio\\Inloggen\\Inloggen\\Form1.cs",
               "RelativeDocumentMoniker": "Inloggen\\Form1.cs",
               "ToolTip": "C:\\Users\\GielF\\OneDrive - ROC Gilde Opleidingen\\Software_bestanden\\Visual_studio\\Inloggen\\Inloggen\\Form1.cs",
               "RelativeToolTip": "Inloggen\\Form1.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAgwDMAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAIwB4AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-16T08:00:24.517Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormRegistreren.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\GielF\\OneDrive - ROC Gilde Opleidingen\\Software_bestanden\\Visual_studio\\Inloggen\\Inloggen\\FormRegistreren.cs",
+              "RelativeDocumentMoniker": "Inloggen\\FormRegistreren.cs",
+              "ToolTip": "C:\\Users\\GielF\\OneDrive - ROC Gilde Opleidingen\\Software_bestanden\\Visual_studio\\Inloggen\\Inloggen\\FormRegistreren.cs [Design]",
+              "RelativeToolTip": "Inloggen\\FormRegistreren.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-04T22:10:57.934Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Bookmark",

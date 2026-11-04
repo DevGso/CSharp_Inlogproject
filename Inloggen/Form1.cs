@@ -28,7 +28,7 @@ namespace Inloggen
         private void dataBase_Connection()
         {
 
-            string connectionString = "server=localhost;database=InlogProject_Giel;uid=InlogProject;pwd=Gilde123!;port=3306;SslMode=None;";
+            //string connectionString = "server=localhost;database=InlogProject_Giel;uid=InlogProject;pwd=Gilde123!;port=3306;SslMode=None;";
 
             try
             {
@@ -89,7 +89,7 @@ namespace Inloggen
         }
         public string Get_Gebruiker_Rol(string email, string wachtwoord)
         {
-            string query_get_gebruiker_rol = "SELECT Gebruiker.email, Gebruiker.voornaam, Gebruiker.achternaam, Gebruiker.klas, Gebruiker.rolld, Rol.ID, Rol.naam FROM Gebruiker JOIN Rol on Gebruiker.rolld = Rol.ID AND Gebruiker.email = @email";
+            string query_get_gebruiker_rol = "SELECT Gebruiker.email, Gebruiker.rolld, Rol.ID, Rol.naam FROM Gebruiker JOIN Rol on Gebruiker.rolld = Rol.ID AND Gebruiker.email = @email";
 
             using (var connection = new MySqlConnection(connectionString))
             {
@@ -175,12 +175,31 @@ namespace Inloggen
 
                 lbShowRolGebruiker.Text = gebruiker_RoL;
 
+                if (gebruiker_RoL == "Admin")
+                {
+                    this.BackColor = Color.LightGreen;
+                } else if (gebruiker_RoL == "Gebruiker")
+                {
+                    this.BackColor = Color.LightBlue;
+                } else
+                {
+                    this.BackColor = Color.Red;
+                }
+
                 txtEmailInvoer.Text = "";
                 txtWachtwoordInvoer.Text= "";
             } else if (verificatie == false)
             {
                 errorProviderDataBase.SetError(btnInloggen, "foute Inloggegevens");
             }
+        }
+
+        private void btnRegistreren_Click(object sender, EventArgs e)
+        {
+            FormRegistreren formR = new FormRegistreren();
+            formR.Show();
+
+            this.Hide();
         }
     }
 }
