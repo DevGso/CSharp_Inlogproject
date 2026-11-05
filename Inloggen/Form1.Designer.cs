@@ -41,6 +41,7 @@
             this.rTBGebruikers = new System.Windows.Forms.RichTextBox();
             this.lbShowRolGebruiker = new System.Windows.Forms.Label();
             this.errorProviderGetGebruikerRol = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblVoorGebruikerRolLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDataBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderGetGebruikerRol)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +50,7 @@
             // 
             this.lblInloggen.AutoSize = true;
             this.lblInloggen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInloggen.Location = new System.Drawing.Point(334, 38);
+            this.lblInloggen.Location = new System.Drawing.Point(151, 62);
             this.lblInloggen.Name = "lblInloggen";
             this.lblInloggen.Size = new System.Drawing.Size(140, 38);
             this.lblInloggen.TabIndex = 0;
@@ -58,7 +59,7 @@
             // lblEmailInvullen
             // 
             this.lblEmailInvullen.AutoSize = true;
-            this.lblEmailInvullen.Location = new System.Drawing.Point(340, 99);
+            this.lblEmailInvullen.Location = new System.Drawing.Point(157, 123);
             this.lblEmailInvullen.Name = "lblEmailInvullen";
             this.lblEmailInvullen.Size = new System.Drawing.Size(121, 25);
             this.lblEmailInvullen.TabIndex = 1;
@@ -67,7 +68,7 @@
             // lblWachtwoordInvullen
             // 
             this.lblWachtwoordInvullen.AutoSize = true;
-            this.lblWachtwoordInvullen.Location = new System.Drawing.Point(340, 183);
+            this.lblWachtwoordInvullen.Location = new System.Drawing.Point(157, 207);
             this.lblWachtwoordInvullen.Name = "lblWachtwoordInvullen";
             this.lblWachtwoordInvullen.Size = new System.Drawing.Size(122, 25);
             this.lblWachtwoordInvullen.TabIndex = 2;
@@ -85,7 +86,7 @@
             // 
             // btnInloggen
             // 
-            this.btnInloggen.Location = new System.Drawing.Point(334, 277);
+            this.btnInloggen.Location = new System.Drawing.Point(151, 301);
             this.btnInloggen.Name = "btnInloggen";
             this.btnInloggen.Size = new System.Drawing.Size(137, 49);
             this.btnInloggen.TabIndex = 4;
@@ -107,14 +108,14 @@
             // txtWachtwoordInvoer
             // 
             this.txtWachtwoordInvoer.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtWachtwoordInvoer.Location = new System.Drawing.Point(286, 217);
+            this.txtWachtwoordInvoer.Location = new System.Drawing.Point(103, 241);
             this.txtWachtwoordInvoer.Name = "txtWachtwoordInvoer";
             this.txtWachtwoordInvoer.Size = new System.Drawing.Size(233, 29);
             this.txtWachtwoordInvoer.TabIndex = 7;
             // 
             // txtEmailInvoer
             // 
-            this.txtEmailInvoer.Location = new System.Drawing.Point(286, 133);
+            this.txtEmailInvoer.Location = new System.Drawing.Point(103, 157);
             this.txtEmailInvoer.Name = "txtEmailInvoer";
             this.txtEmailInvoer.Size = new System.Drawing.Size(233, 29);
             this.txtEmailInvoer.TabIndex = 8;
@@ -125,7 +126,7 @@
             // 
             // rTBGebruikers
             // 
-            this.rTBGebruikers.Location = new System.Drawing.Point(601, 38);
+            this.rTBGebruikers.Location = new System.Drawing.Point(415, 28);
             this.rTBGebruikers.Name = "rTBGebruikers";
             this.rTBGebruikers.ReadOnly = true;
             this.rTBGebruikers.Size = new System.Drawing.Size(478, 413);
@@ -135,7 +136,7 @@
             // lbShowRolGebruiker
             // 
             this.lbShowRolGebruiker.AutoSize = true;
-            this.lbShowRolGebruiker.Location = new System.Drawing.Point(384, 425);
+            this.lbShowRolGebruiker.Location = new System.Drawing.Point(231, 374);
             this.lbShowRolGebruiker.Name = "lbShowRolGebruiker";
             this.lbShowRolGebruiker.Size = new System.Drawing.Size(0, 25);
             this.lbShowRolGebruiker.TabIndex = 11;
@@ -144,11 +145,20 @@
             // 
             this.errorProviderGetGebruikerRol.ContainerControl = this;
             // 
+            // lblVoorGebruikerRolLabel
+            // 
+            this.lblVoorGebruikerRolLabel.AutoSize = true;
+            this.lblVoorGebruikerRolLabel.Location = new System.Drawing.Point(85, 374);
+            this.lblVoorGebruikerRolLabel.Name = "lblVoorGebruikerRolLabel";
+            this.lblVoorGebruikerRolLabel.Size = new System.Drawing.Size(0, 25);
+            this.lblVoorGebruikerRolLabel.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 472);
+            this.ClientSize = new System.Drawing.Size(922, 472);
+            this.Controls.Add(this.lblVoorGebruikerRolLabel);
             this.Controls.Add(this.lbShowRolGebruiker);
             this.Controls.Add(this.rTBGebruikers);
             this.Controls.Add(this.txtEmailInvoer);
@@ -182,6 +192,7 @@
         private System.Windows.Forms.RichTextBox rTBGebruikers;
         private System.Windows.Forms.Label lbShowRolGebruiker;
         private System.Windows.Forms.ErrorProvider errorProviderGetGebruikerRol;
+        private System.Windows.Forms.Label lblVoorGebruikerRolLabel;
     }
 }
 

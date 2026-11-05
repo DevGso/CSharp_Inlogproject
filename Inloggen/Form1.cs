@@ -28,8 +28,6 @@ namespace Inloggen
         private void dataBase_Connection()
         {
 
-            //string connectionString = "server=localhost;database=InlogProject_Giel;uid=InlogProject;pwd=Gilde123!;port=3306;SslMode=None;";
-
             try
             {
                 using (var connection = new MySqlConnection(connectionString))
@@ -42,30 +40,21 @@ namespace Inloggen
                 errorProviderDataBase.SetError(btnInloggen, ex.Message);
             }
         }
-
-        //private void hashWachtwoord(string plainWachtwoord) -- Kan nuttig zijn voor registreren later.
-        //{
-        //    string hashedWachtwoord = BCrypt.Net.BCrypt.HashPassword(plainWachtwoord);
-
-        //    Console.WriteLine(plainWachtwoord, hashedWachtwoord);
-        //}
-        private async Task<bool> checkLogin(string email, string plainWachtwoord)
+        public bool checkLogin(string email, string plainWachtwoord)
         {
-
             try
             {
-
                 string loginQuery = "SELECT email, wachtwoord FROM Gebruiker WHERE email = @email";
 
                 using (var connection = new MySqlConnection(connectionString))
                 {
-                    await connection.OpenAsync(); 
+                    connection.Open(); 
 
                     using (var cmd = new MySqlCommand(loginQuery, connection))
                     {
                         cmd.Parameters.AddWithValue("@email", email);
 
-                        using (var reader = await cmd.ExecuteReaderAsync())
+                        using (var reader = cmd.ExecuteReader())
                         {
 
 
@@ -118,6 +107,7 @@ namespace Inloggen
 
         private void show_gebruikers()
         {
+            rTBGebruikers.Text = "";
             using (var connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
@@ -156,22 +146,23 @@ namespace Inloggen
                                 klas = "NULL";
                             }
                             string rolNaam = reader.GetString("naam");
-
                             rTBGebruikers.Text += $"Email: {email}, Voornaam: {voornaam}, Achternaam: {achternaam} Klas: {klas}, Rol: {rolNaam} ";
                         }
                     }
                 }
             }
         }
-        private async void btnInloggen_Click(object sender, EventArgs e)
+        private void btnInloggen_Click(object sender, EventArgs e)
         {
-            bool verificatie = await checkLogin(txtEmailInvoer.Text, txtWachtwoordInvoer.Text);
+            bool verificatie = checkLogin(txtEmailInvoer.Text, txtWachtwoordInvoer.Text);
             string gebruiker_RoL = Get_Gebruiker_Rol(txtEmailInvoer.Text, txtWachtwoordInvoer.Text);
 
             if (verificatie == true && gebruiker_RoL != "")
             {
                 MessageBox.Show("ingelogd");
                 show_gebruikers();
+
+                lblVoorGebruikerRolLabel.Text = "Gebruiker rol:";
 
                 lbShowRolGebruiker.Text = gebruiker_RoL;
 
@@ -197,9 +188,9 @@ namespace Inloggen
         private void btnRegistreren_Click(object sender, EventArgs e)
         {
             FormRegistreren formR = new FormRegistreren();
-            formR.Show();
-
             this.Hide();
+            formR.ShowDialog();
+            this.Show();
         }
     }
 }

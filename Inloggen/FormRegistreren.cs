@@ -25,9 +25,6 @@ namespace Inloggen
 
         private void dataBase_Connection()
         {
-
-            //string connectionString = "server=localhost;database=InlogProject_Giel;uid=InlogProject;pwd=Gilde123!;port=3306;SslMode=None;";
-
             try
             {
                 using (var connection = new MySqlConnection(connectionString))
@@ -43,10 +40,7 @@ namespace Inloggen
 
         private void stuur_Gebruiker_Naar_Inlog_Form()
         {
-            Form1 formL = new Form1();
-            formL.Show();
-
-            this.Hide();
+            this.Close();
         }
 
         public bool check_alle_data_ingevuld()
