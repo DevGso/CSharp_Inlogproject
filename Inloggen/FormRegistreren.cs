@@ -96,7 +96,7 @@ namespace Inloggen
 
         private void gebruiker_Registreren_In_Db()
         {
-            string inster_query = "INSERT INTO Gebruiker (email, wachtwoord, voornaam, achternaam, klas, rolld) VALUES (@email, @hashed_wachtwoord, @voornaam, @achternaam, @klas, @gebruiker_rolid)";
+            string inster_query = "INSERT INTO Gebruiker (email, wachtwoord, voornaam, achternaam, klas, rolid) VALUES (@email, @hashed_wachtwoord, @voornaam, @achternaam, @klas, @gebruiker_rolid)";
 
             int rolid_van_gebruiker = get_gebruiker_rolid();
 

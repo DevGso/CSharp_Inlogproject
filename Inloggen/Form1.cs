@@ -78,7 +78,7 @@ namespace Inloggen
         }
         public string Get_Gebruiker_Rol(string email, string wachtwoord)
         {
-            string query_get_gebruiker_rol = "SELECT Gebruiker.email, Gebruiker.rolld, Rol.ID, Rol.naam FROM Gebruiker JOIN Rol on Gebruiker.rolld = Rol.ID AND Gebruiker.email = @email";
+            string query_get_gebruiker_rol = "SELECT Gebruiker.email, Gebruiker.rolid, Rol.ID, Rol.naam FROM Gebruiker JOIN Rol on Gebruiker.rolid = Rol.ID AND Gebruiker.email = @email";
 
             using (var connection = new MySqlConnection(connectionString))
             {
@@ -111,7 +111,7 @@ namespace Inloggen
             using (var connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
-                string selectQuery = "SELECT Gebruiker.email, Gebruiker.voornaam, Gebruiker.achternaam, Gebruiker.klas, Gebruiker.rolld, Rol.ID, Rol.naam FROM Gebruiker JOIN Rol on Gebruiker.rolld = Rol.ID;";
+                string selectQuery = "SELECT Gebruiker.email, Gebruiker.voornaam, Gebruiker.achternaam, Gebruiker.klas, Gebruiker.rolid, Rol.ID, Rol.naam FROM Gebruiker JOIN Rol on Gebruiker.rolid = Rol.ID;";
                 using (MySqlCommand command = new MySqlCommand(selectQuery, connection))
                 {
                     
